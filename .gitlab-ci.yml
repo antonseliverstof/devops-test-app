@@ -23,7 +23,7 @@ before_script:
   - echo $CI_COMMIT_REF_NAME
   - echo -n $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin
 
-latest-build-push:
+latest-build-push-job:
   stage: build-push
   only:
     - master
@@ -31,7 +31,7 @@ latest-build-push:
     - docker build -t antonseliverstof/devops-test-app:latest .
     - docker push antonseliverstof/devops-test-app:latest
 
-tag-build-push:
+tag-build-push-job:
   stage: build-push
   only:
     - tags
