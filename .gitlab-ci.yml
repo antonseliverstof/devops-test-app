@@ -28,13 +28,13 @@ latest-build-push:
   only:
     - master
   script:
-    - docker build -t registry.gitlab.com/antonseliverstof/devops-test-app:latest .
-    - docker push registry.gitlab.com/antonseliverstof/devops-test-app:latest
+    - docker build -t antonseliverstof/devops-test-app:latest .
+    - docker push antonseliverstof/devops-test-app:latest
 
 tag-build-push:
   stage: build-push
   only:
     - tags
   script:
-    - docker build -t registry.gitlab.com/antonseliverstof/devops-test-app:$CI_COMMIT_REF_NAME .
-    - docker push registry.gitlab.com/antonseliverstof/devops-test-app:$CI_COMMIT_REF_NAME
+    - docker build -t antonseliverstof/devops-test-app:$CI_COMMIT_REF_NAME .
+    - docker push antonseliverstof/devops-test-app:$CI_COMMIT_REF_NAME
