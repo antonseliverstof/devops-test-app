@@ -26,7 +26,7 @@ before_script:
 latest_build_push_job:
   stage: build_push
   only:
-    - master
+    - main
   script:
     - docker build -t antonseliverstof/devops-test-app:latest .
     - docker push antonseliverstof/devops-test-app:latest
