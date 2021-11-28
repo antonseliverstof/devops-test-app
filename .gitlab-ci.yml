@@ -16,23 +16,23 @@ image: docker:20.10.5
 services:
   - docker:20.10.5-dind
 stages:
-  - build-push
+  - build_push
 
 before_script:
   - echo $CI_REGISTRY_USER
   - echo $CI_COMMIT_REF_NAME
   - echo -n $CI_REGISTRY_PASSWORD | docker login -u $CI_REGISTRY_USER --password-stdin
 
-latest-build-push-job:
-  stage: build-push
+latest_build_push_job:
+  stage: build_push
   only:
     - master
   script:
     - docker build -t antonseliverstof/devops-test-app:latest .
     - docker push antonseliverstof/devops-test-app:latest
 
-tag-build-push-job:
-  stage: build-push
+tag_build_push_job:
+  stage: build_push
   only:
     - tags
   script:
