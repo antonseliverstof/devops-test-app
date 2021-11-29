@@ -17,7 +17,7 @@ spec:
       containers:
       - name: test-app
         image: antonseliverstof/devops-test-app:latest
-        imagePullPolicy: ifNotPresent
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 80
           name: http
